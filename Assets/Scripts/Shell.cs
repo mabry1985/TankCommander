@@ -1,17 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Shell : MonoBehaviour {
 
 	public GameObject explosion;
     public LayerMask tankMask;
     public AudioSource explosionAudio;
     public float minDamage = 10f;
     public float maxDamage = 20f;
-    public float maxLifeTime = 2f;
+    public float maxLifeTime = 30f;
     public float explosionRadius = 5f;
-
 
     void OnCollisionEnter(Collision col)
     {

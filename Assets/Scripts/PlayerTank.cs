@@ -6,7 +6,7 @@ public class PlayerTank : MonoBehaviour {
     public float rotationSpeed = 100.0f;
     public float pitchRange = 0.02f;
 
-    public Joystick joystick;
+    private Joystick joystick;
 
     public AudioSource movementAudio;
     public AudioClip engineIdling;
@@ -20,6 +20,9 @@ public class PlayerTank : MonoBehaviour {
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         originalPitch = movementAudio.pitch;
+        GameObject joystickObject = GameObject.Find("DriveJoystick");
+        joystick = joystickObject.GetComponent<FixedJoystick>();
+        
     }
 
     private void OnEnable () 
@@ -30,7 +33,7 @@ public class PlayerTank : MonoBehaviour {
     void Update() {
         // float translation = Input.GetAxis("Vertical") * speed;
         float translation = joystick.Vertical * speed;
-
+        
         // float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         float rotation = joystick.Horizontal * rotationSpeed;
         
@@ -39,7 +42,7 @@ public class PlayerTank : MonoBehaviour {
         transform.Translate(0, 0, translation);
         transform.Rotate(0, rotation, 0);
 
-        if (Mathf.Abs(translation) < 0.01f)
+        if (Mathf.Abs(translation) < 0.2f)
         {
             if(movementAudio.clip == engineDriving) 
             {
@@ -59,7 +62,6 @@ public class PlayerTank : MonoBehaviour {
         }
 
     }
-
 
 }
 

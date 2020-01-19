@@ -32,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
     private void Update() 
     {
         tanks = GameObject.FindGameObjectsWithTag("Tank");
-        print (tanks.Length);
         if (tanks.Length < tanksCount) 
         {
            SpawnTank();

@@ -2,31 +2,42 @@
 
 public class CameraFollow : MonoBehaviour
 {
-  public Transform target;
+    public Transform target;
+    public Camera firstPersonCamera;
+    public Camera overheadCamera;
+    public Vector3 mainCamOffset;
 
-  public float smoothSpeed = 0.125f;
-  public Vector3 mainCamOffset;
-  public Quaternion mainCamRotation;
-  public Vector3 menuCamOffset; 
-  public Quaternion menuCamRotation;
+    private bool selected= false;
+    
 
-  private bool mainMenu = false;
-  
+    void LateUpdate() 
+    {
+        transform.position = target.position + mainCamOffset;        
+    }
 
-  void LateUpdate() 
-  {
+    public void ShowOverheadView()
+    {
+        firstPersonCamera.enabled = false;
+        overheadCamera.enabled = true;
+    }
 
-      if(mainMenu)
-      {
-          transform.position = target.position + menuCamOffset;
+    public void ShowFirstPersonView()
+    {
+        firstPersonCamera.enabled = true;
+        overheadCamera.enabled = false;
+    }
 
-      }
-      else
-      {
-          transform.position = target.position + mainCamOffset;  
-          transform.rotation = mainCamRotation;
-      }
+    public void OnClickCamButton(){
+        selected = !selected;
 
-  }
+        if (selected)
+        {
+            ShowOverheadView();
+        }
+        else
+        {
+            ShowFirstPersonView();
+        }
 
+    }
 }

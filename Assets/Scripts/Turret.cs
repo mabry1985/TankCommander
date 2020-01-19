@@ -1,11 +1,16 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
     public float rotationSpeed = 100.0F;
     public Joystick joystick;
 
-    void Update()
+    private void Awake() {
+        GameObject joystickObject = GameObject.Find("TurretJoystick");
+        joystick = joystickObject.GetComponent<FixedJoystick>();    
+    }
+
+    private void Update()
     {
         float rotation = joystick.Horizontal * rotationSpeed;
         rotation *= Time.deltaTime;

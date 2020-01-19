@@ -6,6 +6,9 @@ TagManager:
   tags:
   - waypoint
   - Tank
+  - SpawnPoints
+  - TPC
+  - FireButton
   layers:
   - Default
   - TransparentFX

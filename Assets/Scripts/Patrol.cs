@@ -17,21 +17,19 @@ public class Patrol : NPCBaseFSM
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {  
        base.OnStateEnter(animator,stateInfo,layerIndex);
-       currentWP = 2;
+       currentWP = 0;
 
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(waypoints.Length == 0) return;
        if(Vector3.Distance(waypoints[currentWP].transform.position, NPC.transform.position) < accuracy)
        {
-           currentWP++;
-           if(currentWP >= waypoints.Length)
-           {
-               currentWP = 0;
-           }
+           int ran = Random.Range(0, waypoints.Length);
+      
+           currentWP = ran;
+           
        }
 
        agent.SetDestination(waypoints[currentWP].transform.position);

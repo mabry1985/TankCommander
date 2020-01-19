@@ -11,6 +11,7 @@ public class TankHealth : MonoBehaviour
     public Color m_FullHealthColor = Color.green;  
     public Color m_ZeroHealthColor = Color.red;    
     public GameObject m_ExplosionPrefab;
+    public GameObject coinPrefab;
     
 
     private AudioSource m_ExplosionAudio;          
@@ -61,23 +62,34 @@ public class TankHealth : MonoBehaviour
     private void OnDeath()
     {
         dead = true;
-        
-        if(gameObject.name.Contains("Player"))
-        {
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
-        }
-
-        if(!gameObject.name.Contains("Player")) 
-        {
-            gameObject.GetComponent<TankAI>().StopFiring();
-        }
 
         m_ExplosionParticles.transform.position = transform.position;
         m_ExplosionParticles.gameObject.SetActive(true);
 
         m_ExplosionParticles.Play();
         m_ExplosionAudio.Play();
+        
+        if(gameObject.name.Contains("Player"))
+        {
+            GameObject playerSpawnerObj = GameObject.Find("PlayerSpawner");
+            PlayerSpawner playerSpawner = playerSpawnerObj.GetComponent<PlayerSpawner>();
+            gameObject.SetActive(false);
+            GameObject gameManagerObject = GameObject.Find("GameManager");
+            GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
+            if (gameManager.coinCount >= 5 )
+            {
+                gameManager.coinCount -= 5;
+            }
+            
+            playerSpawner.SpawnPlayer();
+        }
 
-        gameObject.SetActive(false);
+        if(!gameObject.name.Contains("Player")) 
+        {
+            gameObject.GetComponent<TankAI>().StopFiring();
+            Instantiate(coinPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+            gameObject.SetActive(false);
+        }
+
     }
 }
