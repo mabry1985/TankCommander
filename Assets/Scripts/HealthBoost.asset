@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2540a48443720ae46885a4cc448ca048, type: 3}
   m_Name: HealthBoost
   m_EditorClassIdentifier: 
-  itemName: 
-  icon: {fileID: 0}
+  itemName: Health Boost
+  icon: {fileID: 21300000, guid: d877dea754308b04eb89b44fb44849a7, type: 3}
+  heal: 100

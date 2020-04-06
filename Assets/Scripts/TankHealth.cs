@@ -92,4 +92,10 @@ public class TankHealth : MonoBehaviour
         }
 
     }
+
+    public void Heal(float amount)
+    {
+        currentHealth += amount;
+        SetHealthUI();
+    }
 }
