@@ -5,31 +5,22 @@ using UnityEngine.UI;
 
 public class CoinManager : MonoBehaviour
 {
-    [SerializeField]
-    private Coin _coin;
 
     [SerializeField]
-    public int _cointCount = 0;
-
-    [SerializeField]
+    public int _cointCount;
+    
     public Text _coinCountText;
 
     void Start()
     {
-        _cointCount = 0;
-        _coin = GameObject.FindObjectOfType<Coin>();
-        if (_coin == null)
-        {
-            Debug.LogError("Coin Reference is NULL");
-        }
-
-
+        _coinCountText = transform.GetComponentInChildren<Text>();
+        _coinCountText.text = "$ " + 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        _coinCountText.text = "$ " + _cointCount.ToString();
     }
 
     public void CollectCoin()
@@ -37,6 +28,9 @@ public class CoinManager : MonoBehaviour
         _cointCount += 1;
     }
 
-
+    public void RemoveCoin(int cost)
+    {
+        _cointCount -= cost;
+    }
 
 }

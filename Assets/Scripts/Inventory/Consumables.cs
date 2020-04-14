@@ -7,7 +7,11 @@ using UnityEngine;
 public class Consumables : Item
 {
     
-    public float heal = 0f;
+    [SerializeField]
+    private float heal = 0f;
+
+    [SerializeField]
+    public int _cost;
 
     public override void Use()
     {
@@ -16,6 +20,18 @@ public class Consumables : Item
 
         tankHealth.Heal(heal);
         Inventory.instance.Remove(this);
+    }
+
+    public override void Buy()
+    {
+        GameObject coinManager = Store.instance.coinManager;
+        CoinManager coinManagerScript = coinManager.GetComponent<CoinManager>();
+
+        coinManagerScript.RemoveCoin(_cost);
+        Store.instance.Remove(this);
+
+
+
     }
 
 }

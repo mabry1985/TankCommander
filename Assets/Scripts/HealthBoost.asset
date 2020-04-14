@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Health Boost
   icon: {fileID: 21300000, guid: d877dea754308b04eb89b44fb44849a7, type: 3}
   heal: 100
+  _cost: 10

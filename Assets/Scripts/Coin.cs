@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        CoinManager coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
     }
 
     // Update is called once per frame

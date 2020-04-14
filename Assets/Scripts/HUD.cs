@@ -9,7 +9,7 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
-        coinManager._coinCountText.text = "$" + 0;
+
     }
     void Update()
     {

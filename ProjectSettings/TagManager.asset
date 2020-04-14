@@ -46,3 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Inventory
+    uniqueID: 4108460283
+    locked: 0
+  - name: Store
+    uniqueID: 2389582879
+    locked: 0

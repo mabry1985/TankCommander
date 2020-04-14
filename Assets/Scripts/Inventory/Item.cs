@@ -12,5 +12,13 @@ public class Item : ScriptableObject
 
     }
 
+    public virtual void Buy()
+    {
 
+    }
+
+    public virtual void Sell()
+    {
+
+    }
 }
