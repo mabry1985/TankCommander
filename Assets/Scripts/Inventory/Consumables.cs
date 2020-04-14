@@ -18,5 +18,4 @@ public class Consumables : Item
         Inventory.instance.Remove(this);
     }
 
-
 }

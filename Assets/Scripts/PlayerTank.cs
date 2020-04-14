@@ -21,7 +21,15 @@ public class PlayerTank : MonoBehaviour {
         m_Rigidbody = GetComponent<Rigidbody>();
         originalPitch = movementAudio.pitch;
         GameObject joystickObject = GameObject.Find("DriveJoystick");
-        joystick = joystickObject.GetComponent<FixedJoystick>();
+        if (joystickObject == null)
+        {
+            Debug.LogError("No Joystick Found");
+        }
+        else
+        {
+            joystick = joystickObject.GetComponent<FixedJoystick>();
+        }
+        
         
     }
 
@@ -31,18 +39,17 @@ public class PlayerTank : MonoBehaviour {
     }
 
     void Update() {
-        // float translation = Input.GetAxis("Vertical") * speed;
-        float translation = joystick.Vertical * speed;
+        float translation = Input.GetAxis("Vertical");
+        //float translation = joystick.Vertical * speed;
         
-        // float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        float rotation = joystick.Horizontal * rotationSpeed;
         
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
-        transform.Translate(0, 0, translation);
-        transform.Rotate(0, rotation, 0);
+        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        //float rotation = joystick.Horizontal * rotationSpeed;
+        
+        transform.Translate(0, 0, translation * speed * Time.deltaTime);
+        transform.Rotate(0, rotation * rotationSpeed * Time.deltaTime, 0);
 
-        if (Mathf.Abs(translation) < 0.2f)
+        /*if (Mathf.Abs(translation) < 0.2f)
         {
             if(movementAudio.clip == engineDriving) 
             {
@@ -59,7 +66,7 @@ public class PlayerTank : MonoBehaviour {
                 movementAudio.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
                 movementAudio.Play();
             }
-        }
+        }*/
 
     }
 

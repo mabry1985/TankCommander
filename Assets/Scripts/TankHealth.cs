@@ -74,11 +74,11 @@ public class TankHealth : MonoBehaviour
             GameObject playerSpawnerObj = GameObject.Find("PlayerSpawner");
             PlayerSpawner playerSpawner = playerSpawnerObj.GetComponent<PlayerSpawner>();
             gameObject.SetActive(false);
-            GameObject gameManagerObject = GameObject.Find("GameManager");
-            GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
-            if (gameManager.coinCount >= 5 )
+            GameObject coinManagerObject = GameObject.Find("CoinManager");
+            CoinManager coinManager = coinManagerObject.GetComponent<CoinManager>();
+            if (coinManager._cointCount >= 5 )
             {
-                gameManager.coinCount -= 5;
+                coinManager._cointCount -= 5;
             }
             
             playerSpawner.SpawnPlayer();

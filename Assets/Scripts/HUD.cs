@@ -3,12 +3,16 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public Text coins;
+    
+    private CoinManager coinManager;
 
+    private void Start()
+    {
+        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+        coinManager._coinCountText.text = "$" + 0;
+    }
     void Update()
     {
-        GameObject gameManagerObject = GameObject.Find("GameManager");
-        GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
-        coins.text = "$ " + gameManager.coinCount;
+        coinManager._coinCountText.text = "$ " + coinManager._cointCount;
     }
 }
