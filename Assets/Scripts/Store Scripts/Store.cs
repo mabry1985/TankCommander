@@ -34,7 +34,7 @@ public class Store : MonoBehaviour
         {
             StoreScriptController slot = child.GetComponent<StoreScriptController>();
 
-            if (index < list.Count)
+            if (index < list.Count && child.tag == "Store_Slot")
             {
                 slot.item = list[index];
             }

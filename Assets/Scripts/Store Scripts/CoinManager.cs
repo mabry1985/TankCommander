@@ -7,30 +7,36 @@ public class CoinManager : MonoBehaviour
 {
 
     [SerializeField]
-    public int _cointCount;
+    public int _coinCount = 0;
     
     public Text _coinCountText;
 
     void Start()
     {
+        
         _coinCountText = transform.GetComponentInChildren<Text>();
-        _coinCountText.text = "$ " + 0;
+        _coinCount = 0;
+        _coinCountText.text = "$ " + _coinCount;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _coinCountText.text = "$ " + _cointCount.ToString();
+        
+        
     }
 
     public void CollectCoin()
     {
-        _cointCount += 1;
+        _coinCount += 1;
+        _coinCountText.text = "$ " + _coinCount.ToString();
     }
 
     public void RemoveCoin(int cost)
     {
-        _cointCount -= cost;
+        _coinCount -= cost;
+        _coinCountText.text = "$ " + _coinCount.ToString();
+
     }
 
 }

@@ -9,6 +9,9 @@ TagManager:
   - SpawnPoints
   - TPC
   - FireButton
+  - Store_UI
+  - Store_Slot
+  - Inventory_Slot
   layers:
   - Default
   - TransparentFX
