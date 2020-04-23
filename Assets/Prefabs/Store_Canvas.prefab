@@ -27,10 +27,10 @@ RectTransform:
   m_GameObject: {fileID: 4304193712739065673}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4304193713314611237}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -269,14 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   storePanel: {fileID: 4304193713314611238}
-  coinManager: {fileID: 2846427866399524452, guid: 988a5f052c4d22a46bc968de22f2442f,
-    type: 3}
-  list:
-  - {fileID: 11400000, guid: 6b16d0392acc6e84b820e6694aa0c5e7, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  storeList: []
 --- !u!1 &4304193713314611238
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +940,7 @@ PrefabInstance:
     - target: {fileID: 399753095187515694, guid: 241274225165a9c439f804e287126eb4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 399753095187515694, guid: 241274225165a9c439f804e287126eb4,
         type: 3}
@@ -1013,6 +1006,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 399753095187515694, guid: 241274225165a9c439f804e287126eb4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 399753095187515694, guid: 241274225165a9c439f804e287126eb4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 399753095187515694, guid: 241274225165a9c439f804e287126eb4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 241274225165a9c439f804e287126eb4, type: 3}
