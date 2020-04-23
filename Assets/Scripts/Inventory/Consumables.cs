@@ -13,6 +13,7 @@ public class Consumables : Item
     [SerializeField]
     public int _cost;
 
+
     public override void Use()
     {
         GameObject player = Inventory.instance.player;
@@ -24,10 +25,12 @@ public class Consumables : Item
 
     public override void Buy()
     {
-        GameObject coinManager = Store.instance.coinManager;
-        CoinManager coinManagerScript = coinManager.GetComponent<CoinManager>();
-
-        coinManagerScript.RemoveCoin(_cost);
+        GameManager gameManager = GameObject.FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("Game Manager is NULL");
+        }
+        gameManager.RemoveCoin(1);       
         Store.instance.Remove(this);
 
 

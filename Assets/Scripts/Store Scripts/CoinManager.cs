@@ -13,8 +13,8 @@ public class CoinManager : MonoBehaviour
 
     void Start()
     {
-        
-        _coinCountText = transform.GetComponentInChildren<Text>();
+
+        _coinCountText = GameObject.Find("CoinText").GetComponent<Text>();
         _coinCount = 0;
         _coinCountText.text = "$ " + _coinCount;
     }
@@ -36,6 +36,8 @@ public class CoinManager : MonoBehaviour
     {
         _coinCount -= cost;
         _coinCountText.text = "$ " + _coinCount.ToString();
+        Debug.LogError("RemoveCoin Method Run from CoinManager");
+        Debug.LogError(_coinCount);
 
     }
 

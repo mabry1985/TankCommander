@@ -8,11 +8,11 @@ public class Coin : MonoBehaviour
     private float _rotateSpeed = 200f;
 
     [SerializeField]
-    private CoinManager coinManager;
+    private GameManager _gameManager;
 
     private void Start()
     {
-        coinManager = GameObject.Find("CoinManager").GetComponent<CoinManager>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Coin : MonoBehaviour
        if (other.tag == "Player")
        {
             coinSound.Play();
-            coinManager.CollectCoin();
+            _gameManager.CollectCoin();
             MeshRenderer render =this.gameObject.GetComponent<MeshRenderer>();
             render.enabled = false;
             Destroy(transform.parent.gameObject, .5f);

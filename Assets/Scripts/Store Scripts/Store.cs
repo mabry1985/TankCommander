@@ -9,12 +9,9 @@ public class Store : MonoBehaviour
     [SerializeField]
     public GameObject storePanel;
 
-    [SerializeField]
-    public GameObject coinManager;
-
     public static Store instance;
 
-    public List<Item> list = new List<Item>();
+    public List<Item> storeList = new List<Item>();
     void Start()
     {
         instance = this;
@@ -34,9 +31,9 @@ public class Store : MonoBehaviour
         {
             StoreScriptController slot = child.GetComponent<StoreScriptController>();
 
-            if (index < list.Count && child.tag == "Store_Slot")
+            if (index < storeList.Count && child.tag == "Store_Slot")
             {
-                slot.item = list[index];
+                slot.item = storeList[index];
             }
             else
             {
@@ -51,15 +48,15 @@ public class Store : MonoBehaviour
 
     public void Add(Item item)
     {
-        if (list.Count < 6)
+        if (storeList.Count < 6)
         {
-            list.Add(item);
+            storeList.Add(item);
         }
         UpdatePanelSlots();
     }
     public void Remove(Item item)
     {
-        list.Remove(item);
+        storeList.Remove(item);
         UpdatePanelSlots();
     }
 }

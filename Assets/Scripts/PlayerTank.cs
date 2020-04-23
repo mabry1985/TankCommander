@@ -20,7 +20,7 @@ public class PlayerTank : MonoBehaviour
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
-        originalPitch = movementAudio.pitch;
+        //originalPitch = movementAudio.pitch;
         GameObject joystickObject = GameObject.Find("DriveJoystick");
         joystick = joystickObject.GetComponent<FixedJoystick>();
 
@@ -35,6 +35,7 @@ public class PlayerTank : MonoBehaviour
     {
         // float translation = Input.GetAxis("Vertical") * speed;
         float translation = joystick.Vertical * speed;
+        //Debug.LogError(translation);
 
         // float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
         float rotation = joystick.Horizontal * rotationSpeed;
