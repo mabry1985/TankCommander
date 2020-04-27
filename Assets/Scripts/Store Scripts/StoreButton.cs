@@ -22,16 +22,7 @@ public class StoreButton : MonoBehaviour
         
         storeCanvas.gameObject.SetActive(true);
         _isStoreOpen = true;
-        if (_isStoreOpen == true)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-
-        }
-        
+      
        
     }
 
@@ -39,15 +30,5 @@ public class StoreButton : MonoBehaviour
     {
         storeCanvas.gameObject.SetActive(false);
         _isStoreOpen = false;
-        if (_isStoreOpen == true)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-            
-
-        }
     }
 }
