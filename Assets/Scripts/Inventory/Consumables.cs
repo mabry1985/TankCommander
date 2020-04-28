@@ -14,6 +14,7 @@ public class Consumables : Item
     public int _cost;
 
 
+
     public override void Use()
     {
         GameObject player = Inventory.instance.player;
@@ -30,9 +31,10 @@ public class Consumables : Item
         {
             Debug.LogError("Game Manager is NULL");
         }
-        gameManager.RemoveCoin(1);       
+        gameManager.RemoveCoin(_cost);
+        Inventory.instance.Add(this);
         Store.instance.Remove(this);
-
+        
 
 
     }
