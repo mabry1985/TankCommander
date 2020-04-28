@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
 
     public static Inventory instance;
     
-    public List<Item> list = new List<Item>();
+    public List<Item> inventoryList = new List<Item>();
 
 
 
@@ -33,9 +33,9 @@ public class Inventory : MonoBehaviour
         {
             inventoryScriptController slot = child.GetComponent<inventoryScriptController>();
 
-            if (index < list.Count)
+            if (index < inventoryList.Count)
             {
-                slot.item = list[index];
+                slot.item = inventoryList[index];
             }
             else
             {
@@ -50,16 +50,16 @@ public class Inventory : MonoBehaviour
 
     public void Add(Item item)
     {
-        if (list.Count < 6)
+        if (inventoryList.Count < 3)
         {
-            list.Add(item);
+            inventoryList.Add(item);
         }
         UpdatePanelSlots();
     }
 
     public void Remove(Item item)
     {
-        list.Remove(item);
+        inventoryList.Remove(item);
         UpdatePanelSlots();
     }
 

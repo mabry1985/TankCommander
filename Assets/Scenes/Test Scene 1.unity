@@ -9744,6 +9744,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970460863}
   m_Mesh: {fileID: 4300000, guid: 1b0f8caf6ec3ed644bf9751040d84dcb, type: 3}
+--- !u!114 &974302134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5740605332872975174, guid: e9fb09cb4811bff4f99fc1d5b9610c0c,
+    type: 3}
+  m_PrefabInstance: {fileID: 5740605333867121328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799356972377ce84fa52adbf05aaf77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &980354532
 GameObject:
   m_ObjectHideFlags: 0
@@ -22606,7 +22618,7 @@ PrefabInstance:
     - target: {fileID: 4304193713310028317, guid: 770eecd9d82d7444492a645eca94ea90,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4304193713310028313, guid: 770eecd9d82d7444492a645eca94ea90,
         type: 3}
@@ -22718,6 +22730,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1700730229}
+    - target: {fileID: 4304193713310028312, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: _inventory
+      value: 
+      objectReference: {fileID: 974302134}
+    - target: {fileID: 4304193713310028312, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: storeList.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8387650184582615837, guid: 770eecd9d82d7444492a645eca94ea90,
         type: 3}
       propertyPath: m_TagString
@@ -22733,10 +22755,35 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7720451595032882819, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720451595032882819, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 188.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720451595032882819, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7720451595032882819, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3287708303016674744, guid: 770eecd9d82d7444492a645eca94ea90,
         type: 3}
       propertyPath: m_Name
       value: Store_Close_Button_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420546456497726071, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: item
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3475325437699557363, guid: 770eecd9d82d7444492a645eca94ea90,
         type: 3}
@@ -22757,6 +22804,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_MinSize
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404358180115226505, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404358180115226505, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404358180115226505, guid: 770eecd9d82d7444492a645eca94ea90,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770eecd9d82d7444492a645eca94ea90, type: 3}
@@ -23060,7 +23122,7 @@ PrefabInstance:
     - target: {fileID: 5740605332872975174, guid: e9fb09cb4811bff4f99fc1d5b9610c0c,
         type: 3}
       propertyPath: list.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5740605332872975174, guid: e9fb09cb4811bff4f99fc1d5b9610c0c,
         type: 3}
@@ -23072,6 +23134,11 @@ PrefabInstance:
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1571286278}
+    - target: {fileID: 5740605332872975174, guid: e9fb09cb4811bff4f99fc1d5b9610c0c,
+        type: 3}
+      propertyPath: list.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5740605333553834016, guid: e9fb09cb4811bff4f99fc1d5b9610c0c,
         type: 3}
       propertyPath: m_OverrideSorting

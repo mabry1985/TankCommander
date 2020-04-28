@@ -14,6 +14,7 @@ public class Store : MonoBehaviour
     public List<Item> storeList = new List<Item>();
     void Start()
     {
+        
         instance = this;
         UpdatePanelSlots();
     }
@@ -56,7 +57,11 @@ public class Store : MonoBehaviour
     }
     public void Remove(Item item)
     {
+        
         storeList.Remove(item);
+        
         UpdatePanelSlots();
+        
     }
+
 }
