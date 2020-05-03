@@ -9,6 +9,8 @@ public class Consumables : Item
     
     [SerializeField]
     private float heal = 0f;
+    [SerializeField]
+    private float _addArmor = 0f;
 
     [SerializeField]
     public int _cost;
@@ -21,6 +23,7 @@ public class Consumables : Item
         TankHealth tankHealth = player.GetComponent<TankHealth>();
 
         tankHealth.Heal(heal);
+        tankHealth.AddArmor(_addArmor);
         Inventory.instance.Remove(this);
     }
 

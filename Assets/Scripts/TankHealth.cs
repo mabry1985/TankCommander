@@ -5,18 +5,29 @@ using UnityEngine.UI;
 
 public class TankHealth : MonoBehaviour
 {
-    public float m_StartingHealth = 100f;          
-    public Slider m_Slider;                        
-    public Image m_FillImage;                      
+    public float m_StartingHealth = 100f;
+    public float m_StartingArmor = 100f;
+    public Slider m_HealthSlider;
+    public Slider m_ArmorSlider;
+    public Image m_HealthFillImage;
+    public Image m_ArmorFillImage;
     public Color m_FullHealthColor = Color.green;  
-    public Color m_ZeroHealthColor = Color.red;    
+    public Color m_ZeroHealthColor = Color.red;
+    public Color m_FullArmorColor = Color.blue;
+    public Color m_ZeroArmorColor = Color.white;
     public GameObject m_ExplosionPrefab;
     public GameObject coinPrefab;
     
 
     private AudioSource m_ExplosionAudio;          
     private ParticleSystem m_ExplosionParticles;   
-    public float currentHealth;  
+
+    [SerializeField]
+    public float currentHealth;
+    [SerializeField]
+    private float _playerArmor = 100f;
+
+    [SerializeField]
     public bool dead;            
 
 
@@ -32,17 +43,29 @@ public class TankHealth : MonoBehaviour
     private void OnEnable()
     {
         currentHealth = m_StartingHealth;
+        _playerArmor = m_StartingArmor;
         dead = false;
 
         SetHealthUI();
+        SetArmorUI();
     }
 
 
     public void TakeDamage(float amount)
     {
-      currentHealth -= amount;
-      
-      SetHealthUI();
+
+        if (_playerArmor <= 0f && !dead)
+        {
+            currentHealth -= amount;
+        }
+        else
+        {
+            _playerArmor -= amount;
+            
+        }
+
+        SetArmorUI();
+        SetHealthUI();
 
       if(currentHealth <= 0f && !dead)
       {
@@ -53,9 +76,17 @@ public class TankHealth : MonoBehaviour
 
     private void SetHealthUI()
     {
-        m_Slider.value = currentHealth / 100;
+        
+        m_HealthSlider.value = currentHealth / 100;
+        
+        m_HealthFillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / m_StartingHealth);
+    }
 
-        m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / m_StartingHealth);
+    private void SetArmorUI()
+    {
+        m_ArmorSlider.value = _playerArmor / 100;
+
+        m_ArmorFillImage.color = Color.Lerp(m_ZeroArmorColor, m_FullArmorColor, _playerArmor / m_StartingArmor);
     }
 
 
@@ -97,5 +128,11 @@ public class TankHealth : MonoBehaviour
     {
         currentHealth += amount;
         SetHealthUI();
+    }
+
+    public void AddArmor(float amount)
+    {
+        _playerArmor += amount;
+        SetArmorUI();
     }
 }
