@@ -2,18 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadingCallback : MonoBehaviour
+public class LoaderCallback : MonoBehaviour
 {
 
     private bool isFirstUpdate = true;
 
-    void Update()
+    private void Update()
     {
+        StartCoroutine(LoadingScreenDelay());
+        
+    }
+
+    private IEnumerator LoadingScreenDelay()
+    {
+        yield return new WaitForSeconds(2);
+
         if (isFirstUpdate)
         {
             isFirstUpdate = false;
             LoadingStateManager.LoaderCallback();
         }
-        
     }
 }

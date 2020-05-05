@@ -9,6 +9,7 @@ public static class LoadingStateManager
     public enum Scene
     {
         MainMenu,
+        Loading,
         Tanks
     }
 
@@ -16,7 +17,13 @@ public static class LoadingStateManager
 
     public static void Load(Scene scene)
     {
-        SceneManager.LoadScene(scene.ToString());
+        onLoaderCallback = () =>
+        {
+            SceneManager.LoadScene(scene.ToString());
+        };
+
+        SceneManager.LoadScene(Scene.Loading.ToString());
+
     }
 
     public static void LoaderCallback()
@@ -27,4 +34,5 @@ public static class LoadingStateManager
             onLoaderCallback = null;
         }
     }
+
 }

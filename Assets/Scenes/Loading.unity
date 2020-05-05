@@ -316,6 +316,7 @@ MonoBehaviour:
   sphere1: {fileID: 1898936132}
   sphere2: {fileID: 23409409}
   sphere3: {fileID: 1921895169}
+  seconds: 0.4
 --- !u!1001 &485776298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +397,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 485776298}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &884378458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884378460}
+  - component: {fileID: 884378459}
+  m_Layer: 0
+  m_Name: LoaderCallback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &884378459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884378458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df43949a98384c4ea6d5e46f129250c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &884378460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884378458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51, y: 19.07775, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1364846183
 GameObject:
   m_ObjectHideFlags: 0
