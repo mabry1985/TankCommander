@@ -23,4 +23,5 @@ public class LoaderCallback : MonoBehaviour
             LoadingStateManager.LoaderCallback();
         }
     }
-}
+
+} 
