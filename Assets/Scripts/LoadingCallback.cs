@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class LoadingCallback : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    private bool isFirstUpdate = true;
+
     void Update()
     {
+        if (isFirstUpdate)
+        {
+            isFirstUpdate = false;
+            LoadingStateManager.LoaderCallback();
+        }
         
     }
 }
