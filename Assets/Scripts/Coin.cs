@@ -4,28 +4,33 @@ public class Coin : MonoBehaviour
 {
     public AudioSource coinSound;
 
-    private void Awake()
+    [SerializeField]
+    private float _rotateSpeed = 200f;
+
+    [SerializeField]
+    private GameManager _gameManager;
+
+    private void Start()
     {
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 1);
+        transform.Rotate(0, 0, _rotateSpeed * Time.deltaTime);
 
     }
 
     private void OnTriggerEnter(Collider other) 
     {
-       if (other.name.Contains("Player"))
+       if (other.tag == "Player")
        {
             coinSound.Play();
-            GameObject gameManagerObject = GameObject.Find("GameManager");
-            GameManager gameManager = gameManagerObject.GetComponent<GameManager>(); 
-            gameManager.CollectCoin();
+            _gameManager.CollectCoin();
             MeshRenderer render =this.gameObject.GetComponent<MeshRenderer>();
             render.enabled = false;
-            Destroy(this.gameObject, .5f);
+            Destroy(transform.parent.gameObject, .5f);
        }
     }
     

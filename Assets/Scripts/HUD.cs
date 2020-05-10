@@ -3,12 +3,40 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public Text coins;
+    [SerializeField]
+    private GameManager _gameManager;
+    [SerializeField]
+    private StoreButton _storeButton;
+    [SerializeField]
+    public bool _storeOpen = false;
 
+    private void Start()
+    {
+        _storeButton = GameObject.FindObjectOfType<Canvas>().GetComponent<StoreButton>();
+        if (_storeButton == null)
+        {
+            Debug.LogError("Store Button is NULL");
+        }
+        else
+        {
+            _storeButton.gameObject.SetActive(_storeOpen);
+        }
+
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (_gameManager == null)
+        {
+            Debug.LogError("CoinManager is NULL");
+        }
+
+    }
     void Update()
     {
-        GameObject gameManagerObject = GameObject.Find("GameManager");
-        GameManager gameManager = gameManagerObject.GetComponent<GameManager>();
-        coins.text = "$ " + gameManager.coinCount;
+        
+    }
+
+    public void UpdateCoinText()
+    {
+        _gameManager._coinCountText.text = "$ " + _gameManager._coinCount;
+        Debug.LogError("UpdateCoinText Running");
     }
 }
