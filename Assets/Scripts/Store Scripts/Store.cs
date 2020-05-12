@@ -16,13 +16,13 @@ public class Store : MonoBehaviour
     {
         
         instance = this;
-        UpdatePanelSlots();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdatePanelSlots();
     }
 
     void UpdatePanelSlots()

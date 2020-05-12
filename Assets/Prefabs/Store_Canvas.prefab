@@ -484,7 +484,6 @@ GameObject:
   - component: {fileID: 8919642781747218949}
   - component: {fileID: 8125770305743967276}
   - component: {fileID: 4955035737409799167}
-  - component: {fileID: 5004928660506919087}
   m_Layer: 5
   m_Name: Store_Close_Button
   m_TagString: Store_UI
@@ -507,9 +506,9 @@ RectTransform:
   m_Father: {fileID: 4304193713314611237}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 510, y: 471}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -165, y: -69}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8919642781747218949
@@ -591,7 +590,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5004928660506919087}
+      - m_Target: {fileID: 0}
         m_MethodName: CloseStore
         m_Mode: 1
         m_Arguments:
@@ -602,19 +601,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5004928660506919087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8387650184582615837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 512f47e313e0f3f4aa70696fcc334099, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  storeCanvas: {fileID: 4304193713310028314}
 --- !u!1001 &4304193713563050893
 PrefabInstance:
   m_ObjectHideFlags: 0

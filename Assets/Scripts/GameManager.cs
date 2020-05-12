@@ -13,15 +13,25 @@ public class GameManager : MonoBehaviour
     public int _coinCount = 0;
     [SerializeField]
     public Text _coinCountText;
+
+    [Header("Store Open Close Functions")]
+    [SerializeField]
+    private Canvas _storePanel;
+
+    private bool _isStoreOpen;
+
+    private void Awake()
+    {
+        _storePanel = GameObject.Find("Store_Canvas").GetComponent<Canvas>();
+    }
+
+
     void Start()
     {
        _coinCountText.text = "$ " + _coinCount.ToString();
-    }
+        _isStoreOpen = false;
+        _storePanel.gameObject.SetActive(_isStoreOpen);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void CollectCoin()
@@ -34,8 +44,21 @@ public class GameManager : MonoBehaviour
     {
         _coinCount -= cost;
         _coinCountText.text = "$ " + _coinCount.ToString();
-        Debug.LogError("RemoveCoin Method Run from CoinManager");
-        Debug.LogError(_coinCount);
 
+    }
+
+    public void OpenStore()
+    {
+
+        _storePanel.gameObject.SetActive(true);
+        _isStoreOpen = true;
+
+
+    }
+
+    public void CloseStore()
+    {
+        _storePanel.gameObject.SetActive(false);
+        _isStoreOpen = false;
     }
 }
