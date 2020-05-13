@@ -77,16 +77,16 @@ public class TankHealth : MonoBehaviour
     private void SetHealthUI()
     {
         
-        m_HealthSlider.value = currentHealth / 100;
+        if (m_HealthSlider != null) m_HealthSlider.value = currentHealth / 100;
         
-        m_HealthFillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / m_StartingHealth);
+        if (m_HealthFillImage != null) m_HealthFillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, currentHealth / m_StartingHealth);
     }
 
     private void SetArmorUI()
     {
-        m_ArmorSlider.value = _playerArmor / 100;
+        if (m_ArmorSlider != null) m_ArmorSlider.value = _playerArmor / 100;
 
-        m_ArmorFillImage.color = Color.Lerp(m_ZeroArmorColor, m_FullArmorColor, _playerArmor / m_StartingArmor);
+        if (m_ArmorFillImage != null) m_ArmorFillImage.color = Color.Lerp(m_ZeroArmorColor, m_FullArmorColor, _playerArmor / m_StartingArmor);
     }
 
 

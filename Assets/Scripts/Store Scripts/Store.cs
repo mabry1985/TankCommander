@@ -38,11 +38,11 @@ public class Store : MonoBehaviour
             }
             else
             {
-                slot.item = null;
+                if (slot !=  null) slot.item = null;
             }
 
 
-            slot.updateInfo();
+            if (slot != null) slot.updateInfo();
             index++;
         }
     }
