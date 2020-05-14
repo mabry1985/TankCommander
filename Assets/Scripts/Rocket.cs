@@ -3,17 +3,74 @@
 public class Rocket : MonoBehaviour
 {
     public GameObject rocket;
+    public GameObject explosion;
+
+    public AudioSource explosionAudio;
+    public LayerMask tankMask;
+
     public float speed = 3f;
-    // Start is called before the first frame update
+    public float maxLifeTime = 30f;
+
+    public float minDamage = 30f;
+    public float maxDamage = 50f;
+    public float explosionRadius = 5f;
+
     private void Awake()
     {
-        
+        Destroy(this.gameObject, maxLifeTime);
+        Physics.IgnoreLayerCollision(9, 9);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         rocket.transform.Translate(0, 5 * Time.deltaTime * speed, 0);
         rocket.transform.Rotate(0f, .05f, 0f, Space.Self);
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        ContactPoint contact = col.contacts[0];
+        TankHealth targetHealth = col.gameObject.GetComponent<TankHealth>();
+
+        if (targetHealth)
+        {
+            float damage = Random.Range(minDamage, maxDamage);
+            CalculateDamage(col.transform.position);
+            targetHealth.TakeDamage(damage);
+        }
+
+        Explosion();
+    }
+
+    private void OnDestroy() {
+        print("I was Destroyed :(");
+        Explosion();
+    }
+
+    private void Explosion()
+    {
+        GameObject e = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+        ParticleSystem particle = e.GetComponent<ParticleSystem>(); 
+
+        particle.Play();
+        e.SetActive(true);
+        Destroy(e, 1.5f);
+        Destroy(this.gameObject);
+    }
+
+
+    private float CalculateDamage(Vector3 targetPosition)
+    {
+        Vector3 explosionToTarget = targetPosition - transform.position;
+
+        float explosionDistance = explosionToTarget.magnitude;
+
+        float relativeDistance = (explosionRadius - explosionDistance) / explosionRadius;
+
+        float damage = relativeDistance * maxDamage;
+
+        damage = Mathf.Max(0f, damage);
+
+        return damage;
     }
 }
