@@ -12,8 +12,8 @@ public class Rocket : MonoBehaviour
     public float maxLifeTime = 30f;
 
     public float minDamage = 30f;
-    public float maxDamage = 50f;
-    public float explosionRadius = 5f;
+    public float maxDamage = 100f;
+    public float explosionRadius = 20f;
 
 
     private void Awake()
@@ -30,16 +30,6 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        ContactPoint contact = col.contacts[0];
-        TankHealth targetHealth = col.gameObject.GetComponent<TankHealth>();
-
-        if (targetHealth)
-        {
-            float damage = Random.Range(minDamage, maxDamage);
-            CalculateDamage(col.transform.position);
-            targetHealth.TakeDamage(damage);
-        }
-
         Explosion();
     }
 
@@ -49,6 +39,21 @@ public class Rocket : MonoBehaviour
 
     private void Explosion()
     {
+        
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        
+        foreach (Collider nearbyObject in colliders)
+        {
+            TankHealth targetHealth = nearbyObject.GetComponent<TankHealth>();
+
+            if (targetHealth)
+            {
+                float damage = CalculateDamage(nearbyObject.transform.position);
+                targetHealth.TakeDamage(damage);
+            }
+            print(nearbyObject.name);
+        }
+
         GameObject e = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         ParticleSystem particle = e.GetComponent<ParticleSystem>(); 
         explosionAudio.Play();
@@ -66,11 +71,17 @@ public class Rocket : MonoBehaviour
         float explosionDistance = explosionToTarget.magnitude;
 
         float relativeDistance = (explosionRadius - explosionDistance) / explosionRadius;
-
         float damage = relativeDistance * maxDamage;
-
         damage = Mathf.Max(0f, damage);
+        print(damage);
 
         return damage;
+    }
+
+    void OnDrawGizmos()
+    {
+        // Draw a yellow sphere at the transform's position
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, explosionRadius);
     }
 }

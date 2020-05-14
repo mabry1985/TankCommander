@@ -9723,7 +9723,7 @@ MonoBehaviour:
   maxLifeTime: 3
   minDamage: 30
   maxDamage: 50
-  explosionRadius: 5
+  explosionRadius: 15
 --- !u!82 &-5849753184198314722
 AudioSource:
   m_ObjectHideFlags: 0
