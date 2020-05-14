@@ -27,8 +27,9 @@ public class Rocket : MonoBehaviour
         rocket.transform.Rotate(0f, .05f, 0f, Space.Self);
     }
 
-    private void OnCollisionEnter(Collision col)
+    void OnCollisionEnter(Collision col)
     {
+        print("I collided");
         ContactPoint contact = col.contacts[0];
         TankHealth targetHealth = col.gameObject.GetComponent<TankHealth>();
 
@@ -43,7 +44,6 @@ public class Rocket : MonoBehaviour
     }
 
     private void OnDestroy() {
-        print("I was Destroyed :(");
         Explosion();
     }
 
@@ -51,7 +51,7 @@ public class Rocket : MonoBehaviour
     {
         GameObject e = Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
         ParticleSystem particle = e.GetComponent<ParticleSystem>(); 
-
+        explosionAudio.Play();
         particle.Play();
         e.SetActive(true);
         Destroy(e, 1.5f);

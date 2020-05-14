@@ -7,6 +7,7 @@ public class RocketMount : MonoBehaviour
 
     public GameObject mountedRocket1;
     public GameObject mountedRocket2;
+    public GameObject rocketSpawnPoint;
 
     public GameObject rocketPrefab;
 
@@ -27,11 +28,11 @@ public class RocketMount : MonoBehaviour
     {
         if (!rocket1Fired) {
             mountedRocket1.SetActive(false);
-            GameObject rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
+            GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint.transform.position, transform.rotation);
             rocket1Fired = true;
         } else if (!empty) {
             mountedRocket2.SetActive(false);
-            GameObject rocket = Instantiate(rocketPrefab, transform.position, transform.rotation);
+            GameObject rocket = Instantiate(rocketPrefab, rocketSpawnPoint.transform.position, transform.rotation);
             empty = true;
             this.gameObject.SetActive(false);
         }

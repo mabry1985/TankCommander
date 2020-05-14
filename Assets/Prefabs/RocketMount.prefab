@@ -265,6 +265,7 @@ Transform:
   - {fileID: 4033559537245708416}
   - {fileID: 4033559536818188190}
   - {fileID: 4033559538153495528}
+  - {fileID: 42463053831951535}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 99.685, y: -90.13599, z: -90.134}
@@ -1212,3 +1213,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &7972106356423697846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 42463053831951535}
+  m_Layer: 0
+  m_Name: RocketSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &42463053831951535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7972106356423697846}
+  m_LocalRotation: {x: -0.7044417, y: -0.059681173, z: -0.059704855, w: 0.7047236}
+  m_LocalPosition: {x: 0.823, y: -0.035, z: 0.323}
+  m_LocalScale: {x: 2.869755, y: 2.8697548, z: 2.869755}
+  m_Children: []
+  m_Father: {fileID: 2715683296015901112}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
