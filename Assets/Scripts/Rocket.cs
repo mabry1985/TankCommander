@@ -15,6 +15,7 @@ public class Rocket : MonoBehaviour
     public float maxDamage = 50f;
     public float explosionRadius = 5f;
 
+
     private void Awake()
     {
         Destroy(this.gameObject, maxLifeTime);
@@ -29,7 +30,6 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        print("I collided");
         ContactPoint contact = col.contacts[0];
         TankHealth targetHealth = col.gameObject.GetComponent<TankHealth>();
 
