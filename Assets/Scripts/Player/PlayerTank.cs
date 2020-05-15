@@ -51,7 +51,7 @@ public class PlayerTank : MonoBehaviour
             {
                 movementAudio.clip = engineIdling;
                 movementAudio.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
-                movementAudio.Play();
+                //movementAudio.Play();
             }
         }
         else
@@ -60,7 +60,7 @@ public class PlayerTank : MonoBehaviour
             {
                 movementAudio.clip = engineDriving;
                 movementAudio.pitch = Random.Range(originalPitch - pitchRange, originalPitch + pitchRange);
-                movementAudio.Play();
+              //  movementAudio.Play();
             }
         }
         
