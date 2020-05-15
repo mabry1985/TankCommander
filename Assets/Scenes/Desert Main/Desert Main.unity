@@ -22826,6 +22826,12 @@ PrefabInstance:
       propertyPath: m_Text
       value: 0000
       objectReference: {fileID: 0}
+    - target: {fileID: 7723109808497380910, guid: 9b2862b75f6605c4c98460f8fb5dd462,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 67112a0a23a85f142af0733abc6fa07b,
+        type: 3}
     - target: {fileID: 5525200290024701637, guid: 9b2862b75f6605c4c98460f8fb5dd462,
         type: 3}
       propertyPath: storeCanvas
@@ -23045,6 +23051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 114.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723109808497380911, guid: 9b2862b75f6605c4c98460f8fb5dd462,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 1442505540, guid: 9b2862b75f6605c4c98460f8fb5dd462, type: 3}
       propertyPath: _gameManager
