@@ -119,7 +119,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a1d46d658d85f9c429d88282b15084b7, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 1065b61da0b13744a9c716f31a59269e, type: 2}
 --- !u!1 &2830015
 GameObject:
   m_ObjectHideFlags: 0
@@ -12142,11 +12142,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
-    - target: {fileID: 7717776623379146339, guid: 54709fd139d2626408a00e147c654996,
-        type: 3}
-      propertyPath: coinManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8183297334588039912, guid: 54709fd139d2626408a00e147c654996,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12201,6 +12196,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717776623379146339, guid: 54709fd139d2626408a00e147c654996,
+        type: 3}
+      propertyPath: coinManager
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54709fd139d2626408a00e147c654996, type: 3}
@@ -16476,7 +16476,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 4e-45}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -17674,26 +17674,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3461544550945882364, guid: ff8eb08a9a453af4380b02cb23a3e357,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3461544550945882364, guid: ff8eb08a9a453af4380b02cb23a3e357,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3951836925260283607, guid: ff8eb08a9a453af4380b02cb23a3e357,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3023587377103026491, guid: ff8eb08a9a453af4380b02cb23a3e357,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3461544549959967485, guid: ff8eb08a9a453af4380b02cb23a3e357,
         type: 3}
       propertyPath: m_Slider
@@ -17719,6 +17699,26 @@ PrefabInstance:
       propertyPath: m_ArmorSlider
       value: 
       objectReference: {fileID: 28563489}
+    - target: {fileID: 3023587377103026491, guid: ff8eb08a9a453af4380b02cb23a3e357,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461544550945882364, guid: ff8eb08a9a453af4380b02cb23a3e357,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461544550945882364, guid: ff8eb08a9a453af4380b02cb23a3e357,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951836925260283607, guid: ff8eb08a9a453af4380b02cb23a3e357,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff8eb08a9a453af4380b02cb23a3e357, type: 3}
 --- !u!1 &1664190537
@@ -22608,6 +22608,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: OverheadCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 4268893518939040619, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1700730232}
+    - target: {fileID: 4268893518939040619, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2,
+        type: 3}
+      propertyPath: firstPersonCamera
+      value: 
+      objectReference: {fileID: 1823165009}
     - target: {fileID: 4268893518939040618, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22663,16 +22673,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -358.142
       objectReference: {fileID: 0}
-    - target: {fileID: 4268893518939040619, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 1700730232}
-    - target: {fileID: 4268893518939040619, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2,
-        type: 3}
-      propertyPath: firstPersonCamera
-      value: 
-      objectReference: {fileID: 1823165009}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e9a28f764c41bb4e96a3fe8dd86fca2, type: 3}
 --- !u!1001 &4304193712975728815
