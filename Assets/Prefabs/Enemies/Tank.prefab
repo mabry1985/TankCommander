@@ -453,7 +453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3461544549959967486, guid: ff8eb08a9a453af4380b02cb23a3e357, type: 3}
-  bullet: {fileID: 1831834044265188, guid: c34f146615d88f743925e02dbcacac45, type: 3}
+  bullet: {fileID: 1831834044265188, guid: 712c08548953f204c8bded3c6a10f415, type: 3}
   turret: {fileID: 5973121118672232383}
 --- !u!195 &5973121119734836153
 NavMeshAgent:
@@ -519,14 +519,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_StartingHealth: 100
-  m_Slider: {fileID: 5973121119233341281}
-  m_FillImage: {fileID: 5973121118191279803}
+  m_StartingArmor: 100
+  m_HealthSlider: {fileID: 0}
+  m_ArmorSlider: {fileID: 0}
+  m_HealthFillImage: {fileID: 0}
+  m_ArmorFillImage: {fileID: 0}
   m_FullHealthColor: {r: 0, g: 1, b: 0, a: 1}
   m_ZeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  m_FullArmorColor: {r: 0, g: 0, b: 1, a: 1}
+  m_ZeroArmorColor: {r: 1, g: 1, b: 1, a: 1}
   m_ExplosionPrefab: {fileID: 151086, guid: 19e51e52112a3f048b7cf146cd9dc16f, type: 3}
   coinPrefab: {fileID: 296658447873536981, guid: 54709fd139d2626408a00e147c654996,
     type: 3}
   currentHealth: 0
+  _playerArmor: 100
   dead: 0
 --- !u!208 &5051534050563935984
 NavMeshObstacle:
@@ -655,16 +661,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthSlider
       objectReference: {fileID: 0}
-    - target: {fileID: 3195711258745396125, guid: fa330b173c5e1694da73462de1a5a55e,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3195711258745396125, guid: fa330b173c5e1694da73462de1a5a55e,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3195711257640039035, guid: fa330b173c5e1694da73462de1a5a55e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -770,6 +766,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3195711258745396125, guid: fa330b173c5e1694da73462de1a5a55e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195711258745396125, guid: fa330b173c5e1694da73462de1a5a55e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa330b173c5e1694da73462de1a5a55e, type: 3}
 --- !u!224 &5973121119233341282 stripped
@@ -778,27 +784,3 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 9132658444309923097}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5973121119233341281 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3195711257640039032, guid: fa330b173c5e1694da73462de1a5a55e,
-    type: 3}
-  m_PrefabInstance: {fileID: 9132658444309923097}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5973121118191279803 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3195711258745396130, guid: fa330b173c5e1694da73462de1a5a55e,
-    type: 3}
-  m_PrefabInstance: {fileID: 9132658444309923097}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed81576adf3668c4c843585a2df36ccc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shell: {fileID: 54826621742474522, guid: c34f146615d88f743925e02dbcacac45, type: 3}
+  shell: {fileID: 54826621742474522, guid: 712c08548953f204c8bded3c6a10f415, type: 3}
   fireTransform: {fileID: 3461544550649050183}
   aimSlider: {fileID: 4137492938561042927}
   shootingAudio: {fileID: 2852214373095817460}
