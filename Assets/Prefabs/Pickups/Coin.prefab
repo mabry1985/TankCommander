@@ -140,8 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinSound: {fileID: 4956956673015852490}
   _rotateSpeed: 1
-  coinManager: {fileID: 2846427866399524454, guid: 988a5f052c4d22a46bc968de22f2442f,
-    type: 3}
+  _gameManager: {fileID: 0}
 --- !u!82 &4956956673015852490
 AudioSource:
   m_ObjectHideFlags: 0
